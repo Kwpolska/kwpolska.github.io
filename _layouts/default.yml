@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="Description" content="Kwpolska's GitHub page.">
-<link rel="stylesheet" href="/style.css" type="text/css">
+<link rel="stylesheet" href="http://kwpolska.co.cc/style.css" type="text/css">
 <title>{{ page.title }} — Kw’s GitHub Page</title>
 </head>
 <body>
 <header>
     <nav>
-        <div id="logo"><a href="http://kwpolska.github.com"><img src="/images/transparent.png" alt="Kw"></a></div>
+<!--        <div id="logo"><a href="http://kwpolska.github.com"><img src="/images/transparent.png" alt="Kw"></a></div>-->
         <ul>
             <li><a href="/">Kw’s GitHub Page</a></li>
             <li><a href="http://kwpolska.co.cc">Kw’s Home</a></li>

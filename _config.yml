@@ -2,7 +2,7 @@ future:      true
 lsi:         false
 pygments:    true
 paginate:    10
-markdown:    kramdown
+markdown:    maruku
 permalink:   none
 
 maruku:
