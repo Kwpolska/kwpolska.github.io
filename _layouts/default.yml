@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="Description" content="Kwpolska's GitHub page.">
+<link rel="stylesheet" href="/style.css" type="text/css">
+<title>{{ page.title }} — Kw’s GitHub Page</title>
+</head>
+<body>
+<header>
+    <nav>
+        <div id="logo"><a href="http://kwpolska.github.com"><img src="/images/transparent.png" alt="Kw"></a></div>
+        <ul>
+            <li><a href="/">Kw’s GitHub Page</a></li>
+            <li><a href="http://kwpolska.co.cc">Kw’s Home</a></li>
+        </ul>
+        <h1>{{ page.title }}</h1>
+    </nav>
+</header>
+<section>
+{{ content }}
+</section>
+<footer>Copyright © 2009-2011 Kwpolska. Brought to you by <a href="http://jekyllrb.com">Jekyll</a>.  Licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">CC BY-NC-ND</a>.  Last update: {{ site.time | date site.time, "%b %d, %Y" }}.</footer>
+</body>
+</html>
