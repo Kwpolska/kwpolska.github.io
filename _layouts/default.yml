@@ -10,7 +10,7 @@
 <body>
 <header>
     <nav>
-<!--        <div id="logo"><a href="http://kwpolska.github.com"><img src="/images/transparent.png" alt="Kw"></a></div>-->
+        <div id="logo"><a href="http://kwpolska.github.com"><img src="http://kwcdn.tk/images/transparent.png" alt="Kw"></a></div>
 This is the Kw’s GitHub Page.  You can also see the full <a href="http://kwpolska.tk">Kw’s Home</a>.
         <h1>{{ page.title }}</h1>
     </nav>
@@ -18,6 +18,6 @@ This is the Kw’s GitHub Page.  You can also see the full <a href="http://kwpol
 <section>
 {{ content }}
 </section>
-<footer>Copyright © 2011 Kwpolska. Brought to you by <a href="http://jekyllrb.com">Jekyll</a>.  Licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">CC BY-NC-ND</a>.  Last update: {{ site.time | date site.time, "%b %d, %Y" }}.</footer>
+<footer>Copyright © 2011-2012, Kwpolska. Brought to you by <a href="http://jekyllrb.com">Jekyll</a>.  Licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">CC BY-NC-ND</a>.  Last update: {{ site.time | date site.time, "%b %d, %Y" }}.</footer>
 </body>
 </html>
