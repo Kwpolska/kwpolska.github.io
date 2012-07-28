@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="Description" content="Kwpolska's GitHub page.">
-<link rel="stylesheet" href="http://kwpolska.tk/style.css" type="text/css">
+<link rel="stylesheet" href="http://kwcdn.tk/css/light.min.css" type="text/css">
 <style type="text/css">header a, header a:hover, header a:visited { color: #ccc; }</style>
 <title>{{ page.title }} — Kw’s GitHub Page</title>
 </head>
