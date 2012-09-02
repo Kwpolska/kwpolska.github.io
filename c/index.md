@@ -1,5 +1,5 @@
 ---
-title: Contact  (failsafe)
+title: Contact
 layout: light
 ---
 I am a Pythonista (also writing {ba,z,}sh scripts and, unfortunately, PHP).  You can find some of my projects at GitHub (see below).
