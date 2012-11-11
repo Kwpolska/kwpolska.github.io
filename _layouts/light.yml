@@ -18,9 +18,9 @@
         <script src="http://kwcdn.tk/js/libs/modernizr-2.0.6.min.js"></script>
         </head>
 <body>
-    <span id="whereami">Kw’s GitHub Page</span>
             <div id="container">
             <header>
+                <span id="whereami">Kw’s GitHub Page</span>
                 <h1>{{ page.title }}</h1>
                 <h2>{{ page.description }}</h2>
             </header>
