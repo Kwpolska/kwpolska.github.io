@@ -1,6 +1,6 @@
 ---
-title: github home
-layout: light
+title: Projects
+layout: default
 description: a random place used for absolutely nothing
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Contact
 description: failsafe contact form.
-layout: light
+layout: default
 ---
 I am a Pythonista (also writing {ba,z,}sh scripts and, unfortunately, PHP).  You can find some of my projects at GitHub (see below).
 
@@ -17,20 +17,19 @@ I am a Pythonista (also writing {ba,z,}sh scripts and, unfortunately, PHP).  You
 
 ## Bio
 
-* name: Chris Warrick
+* fake name: Chris Warrick
 * legal name: won’t tell
-* age: not your business
+* age: not too old, not too young
 * editor: Vim
 * OS: Arch Linux
-* shell: zsh
+* shell: zsh + Oh My Zsh
 * DE: KDE
 * projects: see [GitHub][]
-* GPG key: 0x5EAAEA16 (`gpg --keyserver hkp://keys.gnupg.net --recv-key 0x5EAAEA16`, [kwpolska.asc][])
+* GPG key: 0x5EAAEA16 (`gpg --keyserver hkp://keys.gnupg.net --recv-key 0x5EAAEA16`)
 * **Twitter** — [@Kwpolska][twitter]
 * **GitHub** — [Kwpolska][GitHub]
 
 
- [kwpolska.asc]:     http://kwpolska.tk/pub/kwpolska.asc  "kwpolska.asc"
- [the contact form]: http://kwpolska.tk/contact/form.php  "Contact Form"
- [twitter]:          http://twitter.com/Kwpolska          "Twitter"
- [GitHub]:           http://GitHub.com/Kwpolska           "GitHub"
+ [the contact form]: http://kwpolska.tk/contact/  "Contact Form"
+ [twitter]:          https://twitter.com/Kwpolska "Twitter"
+ [GitHub]:           https://github.com/Kwpolska  "GitHub"
