@@ -35,19 +35,27 @@ function project_status(code) {
     switch (code) {
         case '0':
             return '<span class="badge badge-inverse">Draft</span>';
+            break;
         case '1':
             return '<span class="badge badge-important">Work in Progress</span>';
+            break;
         case '2':
             return '<span class="badge badge-warning">Work in Progress</span>';
+            break;
         case '3':
             return '<span class="badge badge-info">Almost done</span>';
+            break;
         case '4':
             return '<span class="badge badge-success">Done</span>';
+            break;
         case '5':
             return '<span class="badge badge-success">Production Ready</span>';
+            break;
         case '-1':
             return '<span class="badge">Abandoned</span>';
+            break;
         default:
             return '<span class="badge">' + code + '</span>';
+            break;
     }
 }

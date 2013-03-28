@@ -165,10 +165,7 @@ post_compilers = {
 # To do manual deployment, set it to []
 DEPLOY_COMMANDS = ["rm -rf ~/git/kwpolska.gihub.com-master/*",
                    "rsync -rav output/* ~/git/kwpolska.github.com-master/",
-                   "cd ~/git/kwpolska.github.com-master/",
-                   "git add *",
-                   "git commit -asm 'autodeploy via Nikola'",
-                   "git push origin master"]
+                   "~/git/kwpolska.github.com-master/nikola-deploy"]
 
 # Where the output site should be located
 # If you don't use an absolute path, it will be considered as relative
