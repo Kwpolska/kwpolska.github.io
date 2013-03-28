@@ -8,17 +8,20 @@
     <h1>${title}</h1>
     </header>
 %endif
-    <%!
-    import re
-    %>
-
     <%
-        text = post.text(lang)
-        matches = re.compile('PROJSTAT\[.*?\]').findall(text)
-        for i in matches:
-            text = text.replace(i, project.status(i[9:-1]))
+    import re
+    from nikola.post import TEASER_REGEXP
+    teaser_split = TEASER_REGEXP.split(post.text(lang))
+    try:
+        pdata = u'<div class="lead">{0}</div>{1}'.format(teaser_split[0], teaser_split[3])
+    except IndexError:
+        pdata = post.text(lang)
+
+    r = re.compile('(PROJSTAT\[(.*?)\])')
+    for i, j in r.findall(pdata):
+        pdata = pdata.replace(i, project.status(j))
     %>
-    ${text}
+    ${pdata}
 <!--
 %if enable_comments:
     ${disqus.html_disqus(post.permalink(absolute=True), post.title(lang), post.base_path)}

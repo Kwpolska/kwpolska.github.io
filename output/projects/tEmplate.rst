@@ -1,0 +1,7 @@
+.. title: TEMPLATE
+.. slug: tEmplate
+.. date: 2013/02/08 14:47:42
+.. description: INSERT TAGLINE HERE.
+.. status: 0
+
+INSERT DESCRIPTION HERE.

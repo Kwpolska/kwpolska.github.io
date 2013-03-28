@@ -13,7 +13,15 @@
     </h1>
     </header>
     <div class="text">
-    ${post.text(lang)}
+    <%
+    from nikola.post import TEASER_REGEXP
+    teaser_split = TEASER_REGEXP.split(post.text(lang))
+    try:
+        pdata = u'<div class="lead">{0}</div>{1}'.format(teaser_split[0], teaser_split[3])
+    except IndexError:
+        pdata = post.text(lang)
+    %>
+    ${pdata}
     </div>
     <footer><a href="#disqus_thread">comments</a></footer>
     </article>
@@ -46,6 +54,6 @@
 
 <%block name="sourcelink">
     <li>
-    <a href="${post.pagenames[lang]+post.source_ext()}" id="sourcelink">${messages[lang]["Source"]}</a>
+    <a href="${post.meta[lang]['slug']+post.source_ext()}" id="sourcelink">${messages[lang]["Source"]}</a>
     </li>
 </%block>

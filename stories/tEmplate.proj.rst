@@ -1,11 +1,7 @@
-<!--
 .. title: TEMPLATE
 .. slug: tEmplate
 .. date: 2013/02/08 14:47:42
 .. description: INSERT TAGLINE HERE.
 .. status: 0
--->
 
-<!-- NOTEASER -->
-
-<p>INSERT DESCRIPTION HERE.</p>
+INSERT DESCRIPTION HERE.

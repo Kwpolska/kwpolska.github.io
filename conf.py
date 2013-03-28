@@ -16,7 +16,7 @@ BASE_URL = "http://kwpolska.github.com"
 SITE_URL = "http://kwpolska.github.com"
 BLOG_EMAIL = "kwpolska@kwpolska.tk"
 BLOG_DESCRIPTION = "The GitHub site of Chris Warrick."
-
+CODE_COLOR_SCHEME = 'friendly'
 # Nikola is multilingual!
 #
 # Currently supported languages are:
@@ -93,6 +93,7 @@ post_pages = (
     ("stories/*.php", "", "story.tmpl", False),
     ("stories/projects.html", "projects", "story.tmpl", False),
     ("stories/*.proj.html", "projects", "project.tmpl", False),
+    ("stories/*.proj.rst", "projects", "project.tmpl", False),
 )
 
 # One or more folders containing files to be copied as-is into the output.
@@ -162,10 +163,11 @@ post_compilers = {
 # "rsync -rav output/* joe@my.site:/srv/www/site"
 # And then do a backup, or ping pingomatic.
 # To do manual deployment, set it to []
-DEPLOY_COMMANDS = ["rsync -rav output/* ~/git/kwpolska.github.com-master/",
+DEPLOY_COMMANDS = ["rm -rf ~/git/kwpolska.gihub.com-master/*",
+                   "rsync -rav output/* ~/git/kwpolska.github.com-master/",
                    "cd ~/git/kwpolska.github.com-master/",
                    "git add *",
-                   "git commit -asm 'autodeploy'",
+                   "git commit -asm 'autodeploy via Nikola'",
                    "git push origin master"]
 
 # Where the output site should be located
