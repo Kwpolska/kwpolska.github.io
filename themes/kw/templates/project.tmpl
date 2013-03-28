@@ -1,0 +1,26 @@
+## -*- coding: utf-8 -*-
+<%inherit file="post.tmpl"/>
+<%namespace name="disqus" file="disqus_helper.tmpl"/>
+<%namespace name="project" file="project_helper.tmpl"/>
+<%block name="content">
+    <header class="page-header">
+    <h1>${title}</h1>
+    </header>
+    <div class="row-fluid">
+    <div class="span10">
+    <div class="lead">${post.meta['description']}</div>
+    ${post.text(lang)}
+    </div>
+    <div class="span2">
+    <p><button class="btn btn-large project-info" project-name="${title}"
+    project-slug="s"><i class="icon-cloud-download icon-large"></i> Get it!</button>
+    </p>
+    ${project.status(post.status)}
+    </div>
+    </div>
+<!--
+%if enable_comments:
+    ${disqus.html_disqus(post.permalink(absolute=True), post.title(lang), post.base_path)}
+%endif
+-->
+</%block>
