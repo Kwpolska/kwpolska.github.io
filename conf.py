@@ -12,8 +12,8 @@ import time
 # Data about this site
 BLOG_AUTHOR = "Chris “Kwpolska” Warrick"
 BLOG_TITLE = "Kw’s GitHub Site"
-BASE_URL = "http://kwpolska.github.com"
-SITE_URL = "http://kwpolska.github.com"
+BASE_URL = "http://kwpolska.github.io"
+SITE_URL = "http://kwpolska.github.io"
 BLOG_EMAIL = "kwpolska@kwpolska.tk"
 BLOG_DESCRIPTION = "The GitHub site of Chris Warrick."
 CODE_COLOR_SCHEME = 'friendly'
