@@ -22,7 +22,7 @@ function getprojectinfo(name) {
                 $('#project-modal-docs').html('<a href="http://' + pdata['gh'] + '.rtfd.org/">Hosted on Read The Docs</a>');
                 break;
             case 'here':
-                $('#project-modal-docs').html('<a href="/projects/' + pdata['gh'] + '.html">Hosted here (project page)</a>');
+                $('#project-modal-docs').html('<a href="/projects/' + pdata['gh'] + '/">Hosted here (project page)</a>');
                 break;
             default:
                 $('#project-modal-docs').html(pdata['docs']);
