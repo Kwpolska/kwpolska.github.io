@@ -8,6 +8,11 @@ function getprojectinfo(name) {
         pdata = data[name]
         $('#project-modal-label').html(pdata['name']);
         $('#project-modal-desc').html(pdata['description']);
+        if (pdata['travis'] !== null) {
+            $('#project-modal-tests').html('<img src=https://travis-ci.org/Kwpolska/' + pdata['travis'] + '.png?branch=master');
+        } else {
+            $('#project-modal-tests').html('no tests (Travis CI)');
+        }
         $('#project-modal-status').html(project_status(pdata['status']));
         $('#project-modal-gh').html('<a href="https://github.com/Kwpolska/' + pdata['gh'] + '">Kwpolska/' + pdata['gh'] + '</a>');
         $('#project-modal-git').html('<input style="width: 99%; margin: 0;" type="text" readonly="readonly" value="https://github.com/Kwpolska/' + pdata['gh'] + '.git">');

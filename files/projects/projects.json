@@ -4,6 +4,7 @@
         "slug": "pkgbuilder",
         "description": "An AUR helper (and library) in Python 3.",
         "status": "5",
+        "travis": null,
         "gh": "pkgbuilder",
         "docs": "rtd",
         "license": "3BSD"
@@ -14,6 +15,7 @@
         "slug": "python-project-template",
         "description": "INSERT TAGLINE HERE.™",
         "status": "5",
+        "travis": "python-project-template",
         "gh": "python-project-template",
         "docs": "here",
         "license": "3BSD"
@@ -24,6 +26,7 @@
         "slug": "aurqt",
         "description": "A graphical AUR manager.",
         "status": "4",
+        "travis": null,
         "gh": "aurqt",
         "docs": "none",
         "license": "3BSD"
@@ -34,6 +37,7 @@
         "slug": "mandy",
         "description": "A nice graphical markup editor with live previews.",
         "status": "0",
+        "travis": null,
         "gh": "mandy",
         "docs": "none",
         "license": "3BSD"
