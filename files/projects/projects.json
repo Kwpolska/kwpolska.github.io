@@ -25,7 +25,7 @@
         "name": "aurqt",
         "slug": "aurqt",
         "description": "A graphical AUR manager.",
-        "status": "4",
+        "status": "5",
         "travis": null,
         "gh": "aurqt",
         "docs": "none",
