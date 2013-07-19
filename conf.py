@@ -17,6 +17,7 @@ SITE_URL = "http://kwpolska.github.io"
 BLOG_EMAIL = "kwpolska@kwpolska.tk"
 BLOG_DESCRIPTION = "The GitHub site of Chris Warrick."
 CODE_COLOR_SCHEME = 'friendly'
+PRETTY_URLS = True
 # Nikola is multilingual!
 #
 # Currently supported languages are:

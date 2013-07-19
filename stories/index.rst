@@ -11,8 +11,8 @@ Hello! This is the GitHub page of Kwpolska.
     Go to: <div class="btn-group" style="text-align: center;">
     <a class="btn btn-large btn-info" href="projects/"> <i class="icon-github
             icon-large"></i> Projects</a>
-    <a class="btn btn-large btn-warning" href="files.html"> <i class="icon-folder-open-alt
+    <a class="btn btn-large btn-warning" href="files/"> <i class="icon-folder-open-alt
             icon-large"></i> Files</a>
-    <a class="btn btn-large" href="contact.html"> <i class="icon-envelope
+    <a class="btn btn-large" href="contact/"> <i class="icon-envelope
             icon-large"></i> Contact (failsafe)</a>
     </div>

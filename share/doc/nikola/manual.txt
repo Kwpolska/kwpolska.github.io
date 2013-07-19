@@ -1,8 +1,7 @@
 The Nikola Handbook
 ===================
 
-:Version: 5.4.2
-:Author: Roberto Alsina <ralsina@netmanagers.com.ar>
+:Version: 5.5
 
 .. class:: alert alert-info pull-right
 
@@ -12,7 +11,7 @@ The Nikola Handbook
 All You Need to Know
 --------------------
 
-After you have Nikola installed:
+After you have Nikola `installed <#installing-nikola>`_:
 
 Create a empty site:
     ``nikola init mysite``
@@ -84,7 +83,7 @@ Getting Help
 ------------
 
 * Feel free to contact me at ralsina@netmanagers.com.ar for questions about Nikola.
-* You can file bugs at `the issue tracker <http://code.google.com/p/nikola-generator/issues/list>`__
+* You can file bugs at `the issue tracker <https://github.com/ralsina/nikola/issues>`__
 * You can discuss Nikola at the `nikola-discuss google group <http://groups.google.com/group/nikola-discuss>`_
 * You can subscribe to `the Nikola Blog <http://nikola.ralsina.com.ar/blog>`_
 * You can follow `Nikola on Twitter <https://twitter.com/#!/nikolagenerator>`_
@@ -197,10 +196,10 @@ Longer version:
 #. Get `Nikola <http://nikola.ralsina.com.ar/>`_
 #. Install dependencies. To do that, either:
 
-   #. ``pip install -r requirements.txt`` or...
+   #. ``pip install -r requirements.txt`` and ``pip install .`` or...
    #. Install your distribution's packages for all the things
       mentioned below, if they exist, or...
-   #. Get all of these manually (but why?, use requirements.txt):
+   #. Get all of these manually (but why?, use pip):
 
       #. Get python, if you don't have it.
       #. Get `doit <http://pydoit.org>`_
@@ -276,9 +275,9 @@ all the pages again, unless you changed something that the page requires. So, if
 the text of a post, or its title, that post page, and all index pages where it is mentioned,
 will be recreated. If you change the post page template, then all the post pages will be rebuilt.
 
-Nikola is mostly a series of doit *tasks*, and you can see them by doing ``nikola build list``::
+Nikola is mostly a series of doit *tasks*, and you can see them by doing ``nikola list``::
 
-    $ nikola build list
+    $ nikola list
     Scanning posts  . . done!
     build_bundles
     copy_assets
@@ -412,6 +411,9 @@ supports them (for example: ``.. author: John Doe``)
 
            .. template: story.tmpl
 
+       That template needs to either be part of the theme, or be placed in a ``templates/``
+       folder inside your site.
+
    password
        The post will be encrypted and invisible until the reader enters the password.
        Also, the post's sourcecode will not be available.
@@ -428,11 +430,11 @@ supports them (for example: ``.. author: John Doe``)
         2012/09/15 19:52:05
 
 If you are writing a multilingual site, you can also create a per-language
-post file (for example: ``how-to-make-money.txt.es``). This one can have two
-lines of metadata:
+post file (for example: ``how-to-make-money.txt.es``). This one can replace
+metadata of the default language, for example:
 
-1) The translated title for the post or page
-2) A translated version of the pagename
+* The translated title for the post or page
+* A translated version of the pagename
 
 You can edit these files with your favourite text editor, and once you are happy
 with the contents, generate the pages as explained in `Getting Started`_
@@ -538,6 +540,15 @@ If you add a "draft" tag to a post, then it will not be shown in indexes and fee
 It *will* be compiled, and if you deploy it it *will* be made available, so use
 with care.
 
+Also if a post has a date in the future, it will not be shown in indexes until you rebuild after
+that date.
+
+Retired Posts
+~~~~~~~~~~~~~
+
+If you add a "retired" tag to a post, then it will not be shown in indexes and feeds.
+It *will* be compiled, and if you deploy it it *will* be made available, so it will
+not generate 404s for people who had linked to it.
 
 Creating a Page
 ---------------
@@ -905,6 +916,21 @@ To use this, you have to put your source code files inside ``listings`` or whate
 Will include the source code from ``foo.py``, highlight its syntax in python mode,
 and also create a ``listings/foo.py.html`` page and the listing will have a title linking to it.
 
+Listings support a few extra options so that you can display a fragment instead of the whole
+file in a document:
+
+start-at
+    Takes a string, and starts displaying the code at the first line that matches it.
+start-before
+    Takes a string, and starts displaying the code right before the first line that matches it.
+end-at
+    Takes a string, and stops displaying the code at the first line that matches it.
+end-before
+    Takes a string, and stops displaying the code right before the first line that matches it.
+
+If you set start-at and start-before, start-at wins. If you set end-at and end-before, end-at wins.
+If you make it so your listing ends before it starts, it's frowned upon and nothing will be shown.
+
 Gist
 ~~~~
 
@@ -924,8 +950,6 @@ Slideshows
 To create an image slideshow, you can use the ``slides`` directive. For example::
 
     .. slides::
-       :preload:
-       :play: 350
 
        /galleries/demo/tesla_conducts_lg.jpg
        /galleries/demo/tesla_lightning2_lg.jpg
@@ -933,13 +957,6 @@ To create an image slideshow, you can use the ``slides`` directive. For example:
        /galleries/demo/tesla_lightning1_lg.jpg
        /galleries/demo/tesla_tower1_lg.jpg
 
-This is based on `slidejs <http://slidesjs.com/>`_ and it supports
-`the options described there <http://slidesjs.com/#options>`_ with one minor tweak to make them
-fit in docutils convention: If the option takes a boolean value, you just have to add it or not. For example,
-to enable preloading, just use the ``:preload:`` option.
-
-If the option takes any other kind of argument, just use it after the option, like ``play`` in the
-above example.
 
 Importing Your Wordpress Site Into Nikola
 -----------------------------------------
@@ -948,7 +965,7 @@ If you like Nikola, and want to start using it, but you have a Wordpress blog, N
 supports importing it. Here's the steps to do it:
 
 1) Get a XML dump of your site [#]_
-2) nikola import_wordpress -f mysite.wordpress.2012-12-20.xml
+2) nikola import_wordpress mysite.wordpress.2012-12-20.xml
 
 After some time, this will crate a ``new_site`` folder with all your data. It currently supports
 the following:
@@ -986,7 +1003,7 @@ Importing To A Custom Location Or Into An Existing Site
 It is possible to either import into a location you desire or into an already existing Nikola site.
 To do so you can specify a location after the dump.::
 
-    $ nikola import_wordpress -f mysite.wordpress.2012-12-20.xml -o import_location
+    $ nikola import_wordpress  mysite.wordpress.2012-12-20.xml -o import_location
 
 With this command Nikola will import into the folder ``import_location``.
 
@@ -1051,10 +1068,15 @@ aggregate. The format is very simple::
 #. Lines that start with http are feed URLs.
 #. URL lines have to be followed by the "real name" of the feed.
 
-FIXME: explain the planetoid theme stuff
-
 After all that is in place, just run ``nikola build`` and you'll get
 a planet.
+If you run ``nikola build`` for the first time you need to actually issue
+the command three times until the planet is build.
+
+There is a special theme for the planets called `site-planetoid`. To use
+this set `THEME` in your ``conf.py`` to ``'site-planetoid'``.
+This is special in the case that it redirects users to the original URL of the post
+when they try to open a post.
 
 Local Search
 ~~~~~~~~~~~~
@@ -1065,8 +1087,7 @@ search will be performed client side.
 
 This plugin implements a Tipue-based local search for your site.
 
-To use it, copy task_localsearch.plugin and task_localsearch
-into a plugins/ folder in your nikola site.
+To use it, enable local_search in ENABLED_EXTRAS in your sites conf.py
 
 After you build your site, you will have several new files in assets/css and assets/js
 and a tipue_search.html that you can use as a basis for using this in your site.
@@ -1101,6 +1122,9 @@ Here's a set of example settings for conf.py that should work nicely with the "s
     <link rel="stylesheet" type="text/css" href="/assets/css/tipuesearch.css">
     <div id="tipue_search_content" style="margin-left: auto; margin-right: auto; padding: 20px;"></div>
     """
+
+    ENABLED_EXTRAS = [ 'local_search' ]
+
 
 The <div> in EXTRA_HEAD_DATA is a hack but it will migrate into the <body> of the
 documents thanks to magic, and will hold the search results after the user searches.
