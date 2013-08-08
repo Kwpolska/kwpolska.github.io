@@ -1,13 +1,12 @@
-.. title: Home
-.. slug: index
-.. date: 2013/02/08 14:47:42
+## -*- coding: utf-8 -*-
+<%namespace name="helper" file="index_helper.tmpl"/>
+<%namespace name="disqus" file="disqus_helper.tmpl"/>
+<%inherit file="base.tmpl"/>
+<%block name="content">
 
-Hello! This is the GitHub page of Kwpolska.
+<p class="lead">Hello! This is the GitHub page of Kwpolska.</p>
 
-.. TEASER_END
-
-.. raw:: html
-
+<p>
     Go to: <div class="btn-group" style="text-align: center;">
     <a class="btn btn-large btn-info" href="projects/"> <i class="icon-github
             icon-large"></i> Projects</a>
@@ -16,3 +15,5 @@ Hello! This is the GitHub page of Kwpolska.
     <a class="btn btn-large" href="contact/"> <i class="icon-envelope
             icon-large"></i> Contact (failsafe)</a>
     </div>
+</p>
+</%block>
