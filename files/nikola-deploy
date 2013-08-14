@@ -1,0 +1,5 @@
+#!/bin/zsh
+cd ~/git/kwpolska.github.com-master/
+git add *
+git commit -as
+git push origin master
