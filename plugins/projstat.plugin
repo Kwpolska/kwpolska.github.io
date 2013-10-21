@@ -1,0 +1,9 @@
+[Core]
+Name = projstat
+Module = projstat
+
+[Documentation]
+Author = Chris Warrick
+Version = 0.1.0
+Website = http://kwpolska.github.io/
+Description = Show project completion status.

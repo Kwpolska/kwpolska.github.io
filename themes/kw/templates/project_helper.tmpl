@@ -2,20 +2,20 @@
 
 <%def name="status(desc)" buffered="True">
     % if desc == '0':
-        <span class="badge badge-inverse">Draft</span>
+        <span class="label label-inverse">Draft</span>
     % elif desc == '1':
-        <span class="badge badge-important">Work in Progress</span>
+        <span class="label label-important">Work in Progress</span>
     % elif desc == '2':
-        <span class="badge badge-warning">Work in Progress</span>
+        <span class="label label-warning">Work in Progress</span>
     % elif desc == '3':
-        <span class="badge badge-info">Almost done</span>
+        <span class="label label-info">Almost done</span>
     % elif desc == '4':
-        <span class="badge badge-success">Done</span>
+        <span class="label label-success">Done</span>
     % elif desc == '5':
-        <span class="badge badge-success">Production Ready</span>
+        <span class="label label-success">Production Ready</span>
     % elif desc == '-1':
-        <span class="badge">Abandoned</span>
+        <span class="label">Abandoned</span>
     % else:
-        <span class="badge">${desc}</span>
+        <span class="label">${desc}</span>
     % endif
 </%def>

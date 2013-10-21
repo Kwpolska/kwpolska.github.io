@@ -1,4 +1,4 @@
 cache
-output
 *.py[co]
 .doit.db
+output

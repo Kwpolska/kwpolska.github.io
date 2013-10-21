@@ -1,11 +1,11 @@
 function getprojectinfo(name) {
     $('#project-modal-label').html('Loading ' + name + '…');
-    $('#project-modal .modal-body').addClass('hide');
+    //$('#project-modal .modal-body').addClass('hide');
     $('#project-modal').modal();
 
     r = Math.random();
     jQuery.getJSON('/projects/projects.json?r=' + r, function(data) {
-        pdata = data[name]
+        pdata = data[name];
         $('#project-modal-label').html(pdata['name']);
         $('#project-modal-desc').html(pdata['description']);
         if (pdata['travis'] != null) {
@@ -32,35 +32,35 @@ function getprojectinfo(name) {
             default:
                 $('#project-modal-docs').html(pdata['docs']);
         }
-        $('#project-modal .modal-body').removeClass('hide');
+        //$('#project-modal').removeClass('hide');
     });
 }
 
 function project_status(code) {
     switch (code) {
         case '0':
-            return '<span class="badge badge-inverse">Draft</span>';
+            return '<span class="label label-inverse">Draft</span>';
             break;
         case '1':
-            return '<span class="badge badge-important">Work in Progress</span>';
+            return '<span class="label label-important">Work in Progress</span>';
             break;
         case '2':
-            return '<span class="badge badge-warning">Work in Progress</span>';
+            return '<span class="label label-warning">Work in Progress</span>';
             break;
         case '3':
-            return '<span class="badge badge-info">Almost done</span>';
+            return '<span class="label label-info">Almost done</span>';
             break;
         case '4':
-            return '<span class="badge badge-success">Done</span>';
+            return '<span class="label label-success">Done</span>';
             break;
         case '5':
-            return '<span class="badge badge-success">Production Ready</span>';
+            return '<span class="label label-success">Production Ready</span>';
             break;
         case '-1':
-            return '<span class="badge">Abandoned</span>';
+            return '<span class="label">Abandoned</span>';
             break;
         default:
-            return '<span class="badge">' + code + '</span>';
+            return '<span class="label">' + code + '</span>';
             break;
     }
 }

@@ -30,16 +30,5 @@
         "gh": "aurqt",
         "docs": "none",
         "license": "3BSD"
-    },
-
-    "mandy": {
-        "name": "Mandy",
-        "slug": "mandy",
-        "description": "A nice graphical markup editor with live previews.",
-        "status": "0",
-        "travis": null,
-        "gh": "mandy",
-        "docs": "none",
-        "license": "3BSD"
     }
 }

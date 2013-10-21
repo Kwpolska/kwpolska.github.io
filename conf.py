@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 import time
+from nikola import filters
 
 ##############################################
 # Configuration, please edit
@@ -13,7 +14,7 @@ BLOG_AUTHOR = "Chris “Kwpolska” Warrick"
 BLOG_TITLE = "Kw’s GitHub Site"
 # This is the main URL for your site. It will be used
 # in a prominent link
-SITE_URL = "http://kwpolska.github.io"
+SITE_URL = "http://kwpolska.github.io/"
 # This is the URL where nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "http://nikola.ralsina.com.ar"
@@ -53,13 +54,13 @@ TRANSLATIONS = {
 
 # Links for the sidebar / navigation bar.
 # You should provide a key-value pair for each used language.
-SIDEBAR_LINKS = {
+NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ('/projects/index.html', 'Projects'),
-        ('/files.html', 'Files'),
+        ('/projects/', 'Projects'),
+        ('/pub/', 'Files'),
         ('http://kwpolska.tk/', 'Blog <i class="icon-external-link"></i>'),
         ('http://kwpolska.tk/contact/', 'Contact <i class="icon-external-link"></i>'),
-        ('/contact.html', 'Contact (failsafe @ github)'),
+        ('/contact/', 'Contact (failsafe @ github)'),
     ),
 }
 
@@ -91,11 +92,10 @@ SIDEBAR_LINKS = {
 #
 
 post_pages = (
-    ("stories/*.rst", "", "story.tmpl", False),
+    #("stories/*.rst", "", "story.tmpl", False),
     ("stories/*.html", "", "story.tmpl", False),
-    ("stories/projects.html", "projects", "story.tmpl", False),
-    ("stories/*.proj.html", "projects", "project.tmpl", False),
-    ("stories/*.proj.rst", "projects", "project.tmpl", False),
+    ("proj/*.html", "projects", "project.tmpl", False),
+    ("proj/*.rst", "projects", "project.tmpl", False),
 )
 
 # One or more folders containing files to be copied as-is into the output.
@@ -187,7 +187,7 @@ REDIRECTIONS = []
 # And then do a backup, or ping pingomatic.
 # To do manual deployment, set it to []
 DEPLOY_COMMANDS = ["rm -rf ~/git/kwpolska.gihub.com-master/*",
-                   "rsync -rav output/* ~/git/kwpolska.github.com-master/",
+                   "rsync -rav --del output/* ~/git/kwpolska.github.com-master/",
                    "~/git/kwpolska.github.com-master/nikola-deploy"]
 
 # Where the output site should be located
@@ -220,6 +220,12 @@ CACHE_FOLDER = 'cache'
 # FILTERS = {
 #    ".jpg": ["jpegoptim --strip-all -m75 -v %s"],
 # }
+
+FILTERS = {
+    ".html": [filters.typogrify],
+}
+
+
 
 # Create a gzipped copy of each generated file. Cheap server-side optimization.
 # GZIP_FILES = False
@@ -313,7 +319,7 @@ BY-NC-ND</a></p></footer>"""
 # http://disqus.com, and set DISQUS_FORUM to the short name you selected.
 # If you want to disable comments, set it to False.
 # Default is "nikolademo", used by the demo sites
-DISQUS_FORUM = 'kwpolska'
+COMMENT_SYSTEM_ID = None
 
 # Create index.html for story folders?
 STORY_INDEX = True
@@ -379,7 +385,7 @@ FUTURE_IS_NOW = False
 
 # Enable Addthis social buttons?
 # Defaults to true
-ADD_THIS_BUTTONS = False
+SOCIAL_BUTTONS_CODE = ''
 
 # Hide link to source for the posts?
 HIDE_SOURCELINK = True
@@ -477,7 +483,7 @@ COPY_SOURCES = False
 # in the default template (base.tmpl).
 # ANALYTICS = ""
 
-ANALYTICS = """
+BODY_END = """
 <!-- asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet
        change the UA-XXXXX-X to be your site's ID -->
 <script>
@@ -537,10 +543,12 @@ ANALYTICS = """
 TIMEZONE = 'Europe/Warsaw'
 
 # If webassets is installed, bundle JS and CSS to make site loading faster
-USE_BUNDLES = False
+USE_BUNDLES = True
+
+HYPHENATE = True
 
 # Plugins you don't want to use. Be careful :-)
-# DISABLED_PLUGINS = ["render_galleries"]
+DISABLED_PLUGINS = ["render_indexes", "render_galleries"]
 
 # Experimental plugins - use at your own risk.
 # They probably need some manual adjustments - please see their respective

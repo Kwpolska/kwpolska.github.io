@@ -1,24 +1,15 @@
 ## -*- coding: utf-8 -*-
-<%inherit file="post.tmpl"/>
-<%namespace name="disqus" file="disqus_helper.tmpl"/>
+<%inherit file="story.tmpl"/>
 <%namespace name="project" file="project_helper.tmpl"/>
 <%block name="content">
     <header class="page-header">
     <h1>${title}</h1>
     </header>
-    <button class="pull-right btn btn-large project-info"
-    project="${post.meta('slug')}"><i class="icon-cog
+    <button class="pull-right btn btn-lg project-info"
+    data-project="${post.meta('slug')}"><i class="icon-cog
     icon-large"></i> Downloads &amp; Information</button>
     <p class="lead">${post.meta('description')}</p>
     ${post.text(lang)}
     </div>
-    <div class="span3">
-
     </div>
-    </div>
-<!--
-%if enable_comments:
-    ${disqus.html_disqus(post.permalink(absolute=True), post.title(lang), post.base_path)}
-%endif
--->
 </%block>
