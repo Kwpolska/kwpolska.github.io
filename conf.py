@@ -91,11 +91,13 @@ NAVIGATION_LINKS = {
 # rss feeds.
 #
 
-post_pages = (
-    #("stories/*.rst", "", "story.tmpl", False),
-    ("stories/*.html", "", "story.tmpl", False),
-    ("proj/*.html", "projects", "project.tmpl", False),
-    ("proj/*.rst", "projects", "project.tmpl", False),
+POSTS = ()
+
+PAGES = (
+    ("stories/*.rst", "", "story.tmpl"),
+    ("stories/*.html", "", "story.tmpl"),
+    ("proj/*.html", "projects", "project.tmpl"),
+    ("proj/*.rst", "projects", "project.tmpl"),
 )
 
 # One or more folders containing files to be copied as-is into the output.
@@ -111,7 +113,7 @@ FILES_FOLDERS = {'files': '' }
 # 'rest' is reStructuredText
 # 'markdown' is MarkDown
 # 'html' assumes the file is html and just copies it
-post_compilers = {
+COMPILERS = {
     "rest": ('.txt', '.rst'),
     "markdown": ('.md', '.mdown', '.markdown'),
     "textile": ('.textile',),
