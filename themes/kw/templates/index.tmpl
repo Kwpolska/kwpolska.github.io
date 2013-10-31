@@ -1,20 +1,43 @@
 ## -*- coding: utf-8 -*-
 <%namespace name="helper" file="index_helper.tmpl"/>
-<%namespace name="disqus" file="disqus_helper.tmpl"/>
+<%namespace name="phelper" file="post_helper.tmpl"/>
+<%namespace name="comments" file="comments_helper.tmpl"/>
 <%inherit file="base.tmpl"/>
 <%block name="content">
-
-<p class="lead">Hello! This is the GitHub page of Kwpolska.</p>
-
-<p>
-    Go to: <div class="btn-group" style="text-align: center;">
-    <a class="btn btn-lg btn-info" href="projects/"> <i class="fa-github
-            icon-2x"></i> Projects</a>
-    <a class="btn btn-lg btn-warning" href="pub/"> <i class="fa-folder-open-alt
-            icon-2x"></i> Files</a>
-    <a class="btn btn-lg btn-primary" href="contact/"> <i
-    class="fa-envelope
-            icon-2x"></i> Contact (failsafe)</a>
+    <div class="row">
+    % for post in posts:
+    <article class="postbox col-md-5
+    %if (loop.index + 1) % 2 == 0:
+    col-md-offset-2
+    %endif
+    ">
+    <header class="page-header">
+    <h1
+    %if len(post.title()) < 30:
+    class="short-title"
+    %endif
+    ><a href="${post.permalink()}">${post.title()}</a><br>
+    <small>
+        <time class="published"
+        datetime="${post.date.isoformat()}">${post.date.strftime(date_format)}</time><br> ${phelper.html_tags(post)}
+    </small>
+    </h1>
+    </header>
+    <div class="text">
+    ${post.text(teaser_only=index_teasers)}
     </div>
-</p>
+    <footer><a href="${post.permalink()}" class="morelink">more</a>
+    % if not post.meta('nocomments'):
+        — <a href="${post.permalink()}#disqus_thread">comments</a>
+    % endif
+    </footer>
+    </article>
+    % if (loop.index + 1) % 2 == 0:
+    </div><div class="row">
+    % endif
+    % endfor
+    ${helper.html_pager()}
+    </div>
+    ${comments.comment_link_script()}
+    ${helper.mathjax_script(posts)}
 </%block>

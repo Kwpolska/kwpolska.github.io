@@ -59,8 +59,8 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ('/projects/', 'Projects'),
         ('/pub/', 'Files'),
-        ('http://kwpolska.tk/', 'Blog <i class="icon-external-link"></i>'),
-        ('http://kwpolska.tk/contact/', 'Contact <i class="icon-external-link"></i>'),
+        ('http://kwpolska.tk/', 'Blog <i class="fa-external-link"></i>'),
+        ('http://kwpolska.tk/contact/', 'Contact <i class="fa-external-link"></i>'),
         ('/contact/', 'Contact (failsafe @ github)'),
     ),
 }
