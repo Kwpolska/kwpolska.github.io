@@ -42,6 +42,7 @@ BLOG_DESCRIPTION = "The GitHub site of Chris Warrick."
 
 # What is the default language?
 DEFAULT_LANG = "en"
+LOCALE_DEFAULT = 'en_GB.UTF-8'
 
 # What other languages do you have?
 # The format is {"translationcode" : "path/to/translation" }
