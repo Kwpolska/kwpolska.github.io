@@ -13,21 +13,32 @@ ${helper.twitter_card_information(post)}
     <header class="page-header">
     <h1><a href="${post.permalink()}">${post.title()}</a>
     <small>
-        ${post.date.strftime(date_format)} <br> ${helper.html_tags(post)}
+        <time class="published" datetime="${post.date.isoformat()}">${post.date.strftime(date_format)}</time><br>${helper.html_tags(post)}
     </small>
     </h1>
     </header>
     <div class="text">
     <%
+    import lxml.html
+    import lxml.etree
     from nikola.post import TEASER_REGEXP
     teaser_split = TEASER_REGEXP.split(post.text())
     try:
-        pdata = u'<div class="lead">{0}</div>{1}'.format(teaser_split[0], teaser_split[3])
+        lead = teaser_split[0]
+        ptext = teaser_split[3]
     except IndexError:
-        pdata = post.text()
+        lead = None
+        ptext = post.text()
     %>
-    ${pdata}
+    %if lead:
+    <div class="lead">
+        ${lead}
+        </div>
+        </div>
+    %endif
+    ${ptext}
     </div>
+
     ${helper.mathjax_script(post)}
     <footer><a href="#disqus_thread">comments</a></footer>
     </article>
