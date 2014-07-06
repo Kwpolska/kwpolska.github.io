@@ -22,13 +22,14 @@
 .navbar-kw li.active a {
     color: #000;
     text-shadow: none;
+    background: #fff;
 }
 
 .navbar-kw .navbar-brand {
     padding: 0 15px;
 }
 
-.navbar-kw a:hover {
+.navbar-kw a:hover, .navbar-kw li.active a:hover {
     color: #fff !important;
     background-image: -webkit-gradient(linear, left 0%, left 100%, from(#00aadd), to(#ffffff));
     background-image: -webkit-linear-gradient(top, #00aadd, 0%, #ffffff, 100%);
@@ -77,7 +78,7 @@ article figure {
 
 /* Article style */
 article.postbox {
-    border: 1px solid #ddd;
+    /*border: 1px solid #ddd;*/
     background: #fff;
     padding: 0;
     /*margin: 5px auto;
@@ -114,6 +115,12 @@ article.postbox header a {
 
 .badge-tag {
     background-color: #00aadd;
+    color: #ffffff;
+}
+
+.page-header h1 {
+    margin-top: 20px;
+    padding-top: 0;
 }
 
 .page-header h1 a {
@@ -130,4 +137,9 @@ article.postbox header a {
     top: 0;
     left: 0;
     z-index: 9999;
+}
+
+.postbox {
+    border-bottom: 0;
+    margin-bottom: 35px;
 }
