@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="INSERT TAGLINE HERE.™">
+    <meta name="author" content="Chris “Kwpolska” Warrick">
+    <title>Python Project Template — Chris Warrick’s GitHub Site</title>
+    
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../assets/css/all.css" rel="stylesheet" type="text/css">
+        <!--
+        <link href="/assets/css/jquery.fancybox.css" rel="stylesheet" media="screen">
+        <link href="/assets/css/jquery.fancybox-thumbs.css" rel="stylesheet" media="screen">
+        <link href="/assets/css/jquery.fancybox-buttons.css" rel="stylesheet" media="screen">
+        -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+         
+            <link rel="icon" href="../../favicon.ico" sizes="16x16">
+
+    
+
+
+
+    
+</head>
+<body>
+<!--[if lt IE 7]>
+<div class="ie6">
+<p>Let IE 6&nbsp;die.</p>
+<small><em>(you were meant to be at Kw’s Blog)</em></small>
+</div>
+<div style="display: none !important;">
+<![endif]-->
+<!-- Menubar -->
+
+<nav class="navbar navbar-kw navbar-fixed-top" role="navigation">
+<div class="container">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#kw-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span id="kw-navbar-collapse-icon">
+              <i class="fa fa-chevron-down"></i>
+          </span>
+        </button>
+        <a class="navbar-brand" href="http://kwpolska.github.io/"><img src="../../assets/img/logo.png" alt="[Kw]"> Chris Warrick’s GitHub Site</a>
+    </div>
+    <div class="collapse navbar-collapse" id="kw-navbar-collapse">
+        <ul class="nav navbar-nav">
+            
+                <li>
+<a href="../">Projects</a>
+                </li>
+<li>
+<a href="../../pub/">Files</a>
+                </li>
+<li>
+<a href="http://chriswarrick.com/">Blog <i class="fa fa-external-link"></i></a>
+                </li>
+<li>
+<a href="http://chriswarrick.com/contact/">Contact <i class="fa fa-external-link"></i></a>
+                </li>
+<li>
+<a href="../../contact/">Contact (failsafe @&nbsp;github)</a>
+
+        </li>
+</ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            
+            
+        </ul>
+    </div>
+<!-- /.navbar-collapse -->
+    </div>
+</nav>
+
+<!-- End of Menubar -->
+
+<div class="container">
+    <div class="body-content">
+    <div id="project-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="project-modal-label">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 class="modal-title" id="project-modal-label">Something is terribly&nbsp;broken.</h3>
+                </div>
+                <div class="modal-body">
+                    <p class="lead" id="project-modal-desc">It isn’t my&nbsp;fault.</p>
+                    <dl class="dl-horizontal">
+                    <dt>Status</dt>
+                    <dd id="project-modal-status"></dd>
+                    <dt>Build status (<code>master</code>)</dt>
+                    <dd id="project-modal-tests"></dd>
+                    <dt>GitHub</dt>
+                    <dd id="project-modal-gh"></dd>
+                    <dt>Git remote (<code>master</code>)</dt>
+                    <dd id="project-modal-git"></dd>
+                    <dt>Zip (<code>master</code>)</dt>
+                    <dd id="project-modal-zip"></dd>
+                    <dt>License</dt>
+                    <dd id="project-modal-license"></dd>
+                    <dt>Documentation</dt>
+                    <dd id="project-modal-docs"></dd>
+                    </dl>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!--Body content-->
+        <div class="row">
+            
+    <header class="page-header">
+    <h1>Python Project&nbsp;Template</h1>
+    </header>
+    <button class="pull-right btn btn-lg project-info" data-project="python-project-template"><i class="fa fa-cog
+    fa-2x"></i> Downloads <span class="amp">&amp;</span> Information</button>
+    <p class="lead">INSERT TAGLINE&nbsp;HERE.™</p>
+    <p>The Python Project Tem­plate is a sam­ple tem­plate for Python pro­ject­s,
+in­clud­ing the Kw Re­lease Script­s, sam­ple PKG­BUILD­s, doc­u­men­ta­tion, test suit­e,
+ <tt class="docutils literal">set­up.py</tt>  etc.</p> 
+ <img alt="https://travis-ci.org/Kwpolska/python-project-template.png?branch=master" src="https://travis-ci.org/Kwpolska/python-project-template.png?branch=master">
+<div class="section" id="using-the-template">
+<h2>USING THE&nbsp;TEMPLATE</h2>
+<div class="section" id="requirements">
+<h3>Requirements</h3>
+<ul class="simple">
+<li>
+<tt class="docutils literal">zsh</tt>  in­stalled (re­quired by  <tt class="docutils literal">/re­lease</tt>  and  <tt class="docutils literal">/.pyp­t/lo­cale­gen</tt>  script­s)</li> 
+ <li>Python with  <tt class="docutils literal">re­quests</tt>  in­stalled (re­quired by  <tt class="docutils literal"><span class="pre">/.pyp­t/{­­com­mit­log,aursend}</span></tt>)</li> 
+ <li>
+<a class="reference external" href="https://github.com/nvie/gitflow">git-flow ex­ten­sions by nvie</a>  (al­ter­na­tive­ly yo can man­u­al­ly al­ter the  <tt class="docutils literal">/re­lease</tt>  scrip­t, and that is much hard­er than
+in­stalling the&nbsp;ex­ten­sion­s)</li> 
+ <li>A git repos­i­to­ry.  The PyPT is ready to go if you use GitHub.  If you do not
+want GitHub, ed­it the  <tt class="docutils literal"><span class="pre">/P­KG­BUILD{,-2}{,-git}</span></tt>  files and any oth­er places
+where GitHub is men­tioned, in­clud­ing this doc­u­ment which you should ed­it&nbsp;­men­tal­ly.</li> 
+ </ul>
+</div>
+<div class="section" id="recommended-possessions">
+<h3>Recommended&nbsp;possessions</h3>
+<ul class="simple">
+<li>Travis CI ac­count (if you do not want Travis CI, re­move  <tt class="docutils literal">/.­travis.yml</tt>)</li> 
+ <li>AUR ac­count (if you do not want AUR up­load­s, re­move the
+ <tt class="docutils literal"><span class="pre">/P­KG­BUILD{,-2}{,-git}</span></tt>  files and mod­i­fy the  <tt class="docutils literal">/.pyp­t/­con­fig</tt>  file)</li> 
+ </ul>
+</div>
+<div class="section" id="contents">
+<h3>Contents</h3>
+<p>The tem­plate con­tains the fol­low­ing files to get you&nbsp;start­ed:</p> 
+ <ul class="simple">
+<li>pre-­con­fig­ured Sphinx with:<ul> 
+ <li>
+<tt class="docutils literal">CON­TRIBUT­ING.rst</tt>   guide (used by GitHub when send­ing a pull re­quest or an&nbsp;is­­sue)</li>  
+  <li><tt class="docutils literal">LI­­CENSE.rst</tt></li>  
+  <li>an em­p­­ty   <tt class="docutils literal">CHANGEL­OG.rst</tt>
+</li>  
+  <li>this (worth­­less for most peo­­ple)   <tt class="docutils literal">README.rst</tt>   and a bare-bones   <tt class="docutils literal">in­­dex.rst</tt>   page</li>  
+  </ul> 
+ </li> 
+ <li>The ex­act same files in  <tt class="docutils literal">/</tt>, which are frag­ile and  <strong>MAY NOT</strong>  be mod­i­fied
+as they are re­placed with copies in  <tt class="docutils literal">/docs</tt>  by the  <tt class="docutils literal">re­lease</tt> 
+script</li> 
+ <li>
+<tt class="docutils literal">__init__.py</tt>  and  <tt class="docutils literal">tem­plate.py</tt>  files in the Python pack­age&nbsp;di­rec­to­ry</li> 
+ <li>A good-e­nough  <tt class="docutils literal">set­up.py</tt>  file</li> 
+ <li>
+<tt class="docutils literal">test­s.py</tt>  con­tain­ing some  <em>Is My Python Sane?</em>-style&nbsp;tests</li> 
+ <li>A sam­ple  <tt class="docutils literal">/us­r/bin/</tt>  script</li> 
+ <li>Ad­dons for Qt&nbsp;users</li> 
+ <li>PKG­BUILDs for the Arch Lin­ux Us­er Repos­i­to­ry&nbsp;(AU­R)</li> 
+ <li>A state-of-the-art  <tt class="docutils literal">re­lease</tt>  scrip­t, the op­er­a­tions of which are:<ul> 
+ <li>query­ing the cur­rent branch for ver­­sion&nbsp;num­ber</li>  
+  <li>up­­­dat­ing   <tt class="docutils literal">/doc­s/CHANGEL­OG.rst</tt>
+</li>  
+  <li>bump­ing the ver­­sion num­ber in all the files, chang­ing dates where&nbsp;nec­es­sary</li>  
+  <li>copy­­ing over   <tt class="docutils literal">/doc­s/README.rst</tt>,    <tt class="docutils literal">/doc­s/CHANGEL­OG.rst</tt>   and   <tt class="docutils literal">/doc­s/­­CON­TRIBUT­ING.rst</tt>   to   <tt class="docutils literal">/</tt>
+</li>  
+  <li>lo­­cale gen­er­a­­tion (via the   <tt class="docutils literal">.pyp­t/lo­­cale­­gen</tt>   scrip­t)</li>  
+  <li>run­n­ing   <tt class="docutils literal">im­­port $pro­­ject</tt>   and the&nbsp;test­­suite</li>  
+  <li>cre­at­ing and up­­load­­ing AUR&nbsp;pack­­ages</li>  
+  <li>com­mit­t­ing in­­­to git, fin­ish­ing the   <tt class="docutils literal">git flow</tt>   re­lease</li>  
+  </ul> 
+ </li> 
+ </ul>
+</div>
+<div class="section" id="getting-up-to-speed-in-15-easy-steps">
+<h3>Getting up to speed in 15 easy&nbsp;steps</h3>
+<ol class="arabic">
+<li>
+<p class="first">Cre­ate the re­pos­i­­to­ry for the project on GitHub and en­able it on Travis&nbsp;CI.</p>  
+  </li> 
+ <li>
+<p class="first">Man­u­al­­ly change   <tt class="docutils literal">Kw­pol­s­­ka</tt>   to your GitHub name in the fol­low­ing&nbsp;files:</p>  
+  <ol class="arabic simple"> 
+ <li>
+<tt class="docutils literal">/doc­s/README.rst</tt>, line&nbsp;10</li>  
+  <li>
+<tt class="docutils literal">/doc­s/CHANGEL­OG.rst</tt>, line&nbsp;10</li>  
+  <li>
+<tt class="docutils literal">/set­up.py</tt>, line&nbsp;14</li>  
+  <li>
+<tt class="docutils literal"><span class="pre">/P­KG­BUILD{,-2}{,-git}</span></tt>, in   <tt class="docutils literal">url</tt>   and   <tt class="docutils literal">source</tt>   (git&nbsp;on­­ly)</li>  
+  </ol> 
+ </li> 
+ <li>
+<p class="first">Man­u­al­­ly change the   <tt class="docutils literal">Main­­tain­er</tt>   line in   <tt class="docutils literal"><span class="pre">/P­KG­BUILD{,-2}{,-git}</span></tt>.</p>  
+  </li> 
+ <li>
+<p class="first">Re­­place the fol­low­ing pat­terns (eg. with sed), in all files,   <strong>ex­­clud­ing
+­­dot­­files</strong>:</p>  
+  <ol class="arabic simple"> 
+ <li>
+<tt class="docutils literal">TEM­­PLATE</tt>   with the full name of the&nbsp;project</li>  
+  <li>
+<tt class="docutils literal">tEm­­plate</tt>   with a “light” name of the project [a-z0-9_&#45;], which will
+be used in the PyP­I, AU­R, and a few oth­­er places.  You can use cap­i­­tal
+let­ters if you feel like it, but it is dis­­­cour­aged and was not&nbsp;test­ed.</li>  
+  <li>
+<tt class="docutils literal"><span class="pre">python-pro­­­jec­t-tem­­­plate</span></tt>   with the GitHub re­po&nbsp;name</li>  
+  <li>
+<tt class="docutils literal">IN­­SERT TAGLINE HERE.</tt>   with a tagline of your&nbsp;choice</li>  
+  <li>
+<tt class="docutils literal"><span class="pre">kw­pol­ska@.*</span></tt>   with your e-­­mail&nbsp;ad­­dress</li>  
+  <li>
+<tt class="docutils literal">Kw­pol­s­­ka</tt>   and/or   <tt class="docutils literal">Chris “K­w­pol­ska” War­rick</tt>   with your name (af­­fects most­­ly copy­­right&nbsp;no­tices)</li>  
+  </ol> 
+ <p>Not ex­­clud­ing dot­­files re­­sults in chang­ing BS­D-li­­censed files of the PyP­T,
+­­do­ing so is not&nbsp;al­lowed.</p>  
+  <p>Al­­so, if   <tt class="docutils literal">len(­­com­put­er_friend­­ly_­­name) !=   <span class="pre">len('tEm­­­plate')</span></tt>, you may want to
+change the amount of tildes in doc­strings of Python&nbsp;files.</p>  
+  </li> 
+ </ol>
+<ol class="arabic" start="4">
+<li>
+<p class="first">Re­­name   <tt class="docutils literal">/tEm­­plate</tt>   to the name used in&nbsp;4.2.</p>  
+  </li> 
+ <li>
+<p class="first">Mod­­i­­fy   <tt class="docutils literal">/doc­s/README.rst</tt>   to re­flect your project and not the Tem­­plate
+(and make a copy if you are read­­ing it lo­­cal­­ly from those&nbsp;files)</p>  
+  </li> 
+ <li>
+<p class="first">Copy: (when us­ing the in­­­clud­ed   <tt class="docutils literal">re­lease</tt>   scrip­t, it hap­pens&nbsp;au­­to­­mat­i­­cal­­ly)</p>  
+  <ol class="arabic simple"> 
+ <li>
+<tt class="docutils literal">/doc­s/README.rst</tt>   to   <tt class="docutils literal">/README.rst</tt>   and   <tt class="docutils literal">/README</tt>
+</li>  
+  <li>
+<tt class="docutils literal">/doc­s/CHANGEL­OG.rst</tt>   to   <tt class="docutils literal">/CHANGEL­OG.rst</tt>
+</li>  
+  </ol> 
+ </li> 
+ <li>
+<p class="first">Mod­­i­­fy   <tt class="docutils literal">/.pyp­t/­­con­­fig</tt></p>  
+  </li> 
+ <li>
+<p class="first">Mod­­i­­fy   <tt class="docutils literal">/bin/tEm­­plate</tt>   and re­­name it OR re­­move the&nbsp;di­rec­­to­ry</p>  
+  </li> 
+ <li>
+<p class="first">Cus­­tom­ize   <tt class="docutils literal">/set­up.py</tt>   to your lik­ing.  You should pay at­ten­­tion to the
+­­clas­si­­fiers and the com­­men­t­ed&nbsp;part­s.</p>  
+  </li> 
+ <li>
+<p class="first">Cus­­tom­ize&nbsp;re­quire­­ments.tx­t.</p>  
+  </li> 
+ <li>
+<p class="first">If you are us­ing PyQt4 or PySide, make sure to put your UI code in a   <tt class="docutils literal">ui</tt>  
+sub­­­mod­­ule.  Copy over the   <tt class="docutils literal"><span class="pre">/QT-AD­­­DON­S/re­­­sources.py</span></tt>   file to that
+­­sub­­­mod­­ule, even if you are not us­ing re­­sources&nbsp;now.</p>  
+  </li> 
+ <li>
+<p class="first">Re­­move the   <tt class="docutils literal"><span class="pre">/QT-AD­­­DON­S/</span></tt>   di­rec­­to­ry.</p>  
+  </li> 
+ <li>
+<p class="first">If you are us­ing Qt, make sure to cre­ate a   <tt class="docutils literal">.pro</tt>   file with your sources
+and&nbsp;lo­­cales.</p>  
+  </li> 
+ <li>
+<p class="first">Read the COPY­­RIGHT sec­­tion be­low (or   <tt class="docutils literal">LI­­CENSE.PyPT</tt>) and re­­move
+  <tt class="docutils literal">/LI­­CENSE.PyPT</tt>   and   <tt class="docutils literal">/README.PyPT</tt>.  If you be­lieve the BSD li­­cense pre­sen­t­ed by the
+  <tt class="docutils literal">/LI­­CENSE</tt>   file is not the li­­cense you wan­t, here is a list of files you
+should&nbsp;mod­­i­­fy:</p>  
+  <ol class="arabic simple"> 
+ <li><tt class="docutils literal">/test­s.py</tt></li>  
+  <li>Ev­ery­thing in the Python pack­­age di­rec­­to­ry (twice in many&nbsp;cas­es)</li>  
+  <li>Ev­ery­thing in   <tt class="docutils literal">/docs</tt>
+</li>  
+  <li>
+<tt class="docutils literal">/LI­­CENSE</tt>, which is   <strong>not</strong>   equiv­­a­­lent to   <tt class="docutils literal">/doc­s/LI­­CENSE.rst</tt>
+</li>  
+  </ol> 
+ <p>PS. GNU GPL is not a good idea.  You can use it, but the world would be
+­­much hap­pi­er if you did&nbsp;not.</p>  
+  </li> 
+ <li>
+<p class="first">Re­­move   <tt class="docutils literal">/.git</tt>, and run the fol­low­ing com­­mand­s, re­­plac­ing stuff with   <tt class="docutils literal">$</tt>  
+in&nbsp;fron­t:</p>  
+  <pre class="literal-block"> 
+git init
+git re­mote add ori­gin git@github.­com:$GI­TUSER­NAME/$GITRE­PO
+git flow init #(change ver­sion tag pre­fix to `v`)
+git add *
+git check­out de­vel­op
+git com­mit -sm 'ini­tial com­mit via Kw­pol­ska’s Python Project Tem­plate'
+git check­out mas­ter
+git merge --f­f-on­ly de­vel­op
+git push -u ori­gin mas­ter de­vel­op
+ </pre> 
+ </li> 
+ </ol>
+<p>Note that the above is like­ly to be re­placed with an au­to­mat­ed script at some&nbsp;­point.</p> 
+ </div>
+</div>
+<div class="section" id="copyright">
+<h2>COPYRIGHT</h2>
+<p>Python Project Tem­plate is li­censed un­der a BS­D-­like li­cense.  You are free to
+re­li­cense your code to an­oth­er open source li­cense.  If you want to ap­ply a
+­com­mer­cial (a.k.a. pro­pri­etary) li­cense, you must con­tact me&nbsp;first.</p> 
+ <p><strong>How­ev­er, the fol­low­ing files must re­main un­der the BSD&nbsp;li­cense:</strong></p> 
+ <ul class="simple">
+<li>/.pyp­t/aursend</li> 
+ <li>/.pyp­t/­com­mit­log</li> 
+ <li>/.pyp­t/lo­cale­gen</li> 
+ <li>/.pyp­t/README.PyPT</li> 
+ <li>/.pyp­t/LI­CENSE.PyPT</li> 
+ <li>/re­lease</li> 
+ </ul>
+<p><strong>This README file MAY NOT be&nbsp;re­li­censed.</strong></p> 
+ <p>Copy­right © 2013-2014, Chris “K­w­pol­ska” War­rick­.
+All rights&nbsp;re­served.</p> 
+ <p>Re­dis­tri­bu­tion and use in source and bi­na­ry form­s, with or with­out
+­mod­i­fi­ca­tion, are per­mit­ted pro­vid­ed that the fol­low­ing con­di­tions are&nbsp;met:</p> 
+ <ol class="arabic simple">
+<li>Re­dis­tri­bu­tions of source code must re­tain the above copy­right
+no­tice, this list of con­di­tion­s, and the fol­low­ing&nbsp;dis­claimer.</li> 
+ <li>Re­dis­tri­bu­tions in bi­na­ry form must re­pro­duce the above copy­right
+no­tice, this list of con­di­tion­s, and the fol­low­ing dis­claimer in the
+­doc­u­men­ta­tion and/or oth­er ma­te­ri­als pro­vid­ed with the&nbsp;dis­tri­bu­tion.</li> 
+ <li>Nei­ther the name of the au­thor of this soft­ware nor the names of
+­con­trib­u­tors to this soft­ware may be used to en­dorse or pro­mote
+prod­ucts de­rived from this soft­ware with­out spe­cif­ic pri­or writ­ten&nbsp;­con­sen­t.</li> 
+ </ol>
+<p>THIS SOFT­WARE IS PRO­VID­ED BY THE COPY­RIGHT HOLD­ERS AND CON­TRIB­U­TORS
+&#8220;AS IS&#8221; AND ANY EX­PRESS OR IM­PLIED WAR­RANTIES, IN­CLUD­ING, BUT NOT
+LIM­IT­ED TO, THE IM­PLIED WAR­RANTIES OF MER­CHANTABIL­I­TY AND FIT­NESS FOR
+A PAR­TIC­U­LAR PUR­POSE ARE DIS­CLAIMED.  IN NO EVENT SHALL THE COPY­RIGHT
+OWN­ER OR CON­TRIB­U­TORS BE LI­ABLE FOR ANY DI­REC­T, IN­DI­REC­T, IN­CI­DEN­TAL,
+SPE­CIAL, EX­EM­PLARY, OR CON­SE­QUEN­TIAL DAM­AGES (IN­CLUD­ING, BUT NOT
+LIM­IT­ED TO, PRO­CURE­MENT OF SUB­STI­TUTE GOODS OR SER­VICES; LOSS OF USE,
+­DATA, OR PROF­IT­S; OR BUSI­NESS IN­TER­RUP­TION) HOW­EV­ER CAUSED AND ON ANY
+THE­O­RY OF LI­A­BIL­I­TY, WHETHER IN CON­TRAC­T, STRICT LI­A­BIL­I­TY, OR TORT
+(IN­CLUD­ING NEG­LI­GENCE OR OTH­ER­WISE) ARIS­ING IN ANY WAY OUT OF THE USE
+OF THIS SOFT­WARE, EVEN IF AD­VISED OF THE POS­SI­BIL­I­TY OF SUCH&nbsp;DAM­AGE.</p> 
+ </div>
+    </div>
+    </div>
+
+        </div>
+        <!--End of body content-->
+
+        <footer>
+            <footer><p><a href="../../cookies/">this site uses
+cookies.</a><br>by using this site, you agree to our cookie&nbsp;policy.</p>
+<p>
+generated by <a href="http://getnikola.com">Nikola</a><br> copyright © 2011–2014 <a href="../../contact/">Chris “Kwpolska” Warrick</a><br> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">CC&nbsp;BY-NC-ND</a></p></footer>
+        </footer>
+    
+
+
+
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
+            <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+            <script src="../../assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
+
+    <script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script>
+
+<script src="../../assets/js/kw.js"></script>
+<script src="../../assets/js/projects.js"></script>
+<script>
+$(document).ready(function() {
+    $(".project-info").click(function() { getprojectinfo($(this).attr('data-project')) });
+});
+</script>
+<!--
+<script src="/assets/js/jquery.mousewheel-3.0.6.pack.js"></script>
+<script src="/assets/js/jquery.fancybox.pack.js"></script>
+<script src="/assets/js/jquery.fancybox-buttons.js"></script>
+<script src="/assets/js/jquery.fancybox-media.js"></script>
+<script src="/assets/js/jquery.fancybox-thumbs.js"></script>
+-->
+<!--[if lt IE 7]>
+</div>
+<![endif]-->
+</body>
+
+<!-- asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet
+       change the UA-XXXXX-X to be your site's ID -->
+<script>
+    var _gaq = [['_setAccount', 'UA-11937989-1'], ['_trackPageview']];
+    (function(d, t) {
+    var g = d.createElement(t),
+        s = d.getElementsByTagName(t)[0];
+    g.async = true;
+    g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g, s);
+    })(document, 'script');
+</script>
+
+</html>
