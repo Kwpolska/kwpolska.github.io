@@ -1,7 +1,6 @@
 
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-import time
 from nikola import filters
 
 ##############################################
@@ -228,6 +227,8 @@ FILTERS = {
     ".html": [filters.typogrify],
 }
 
+GITHUB_SOURCE_BRANCH = 'src'
+GITHUB_DEPLOY_BRANCH = 'master'
 
 
 # Create a gzipped copy of each generated file. Cheap server-side optimization.
