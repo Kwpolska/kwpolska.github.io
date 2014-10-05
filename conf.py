@@ -56,7 +56,7 @@ TRANSLATIONS = {
 # You should provide a key-value pair for each used language.
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ('/projects/', 'Projects'),
+        ('http://chriswarrick.com/projects/', 'Projects <i class="fa fa-external-link"></i>'),
         ('/pub/', 'Files'),
         ('http://chriswarrick.com/', 'Blog <i class="fa fa-external-link"></i>'),
         ('http://chriswarrick.com/contact/', 'Contact <i class="fa fa-external-link"></i>'),
@@ -96,8 +96,6 @@ POSTS = ()
 PAGES = (
     ("stories/*.rst", "", "story.tmpl"),
     ("stories/*.html", "", "story.tmpl"),
-    ("proj/*.html", "projects", "project.tmpl"),
-    ("proj/*.rst", "projects", "project.tmpl"),
 )
 
 # One or more folders containing files to be copied as-is into the output.
@@ -181,7 +179,16 @@ SLUG_TAG_PATH = True
 # relative URL.
 #
 # If you don't need any of these, just set to []
-REDIRECTIONS = []
+REDIRECTIONS = [
+    ('projects/index.html', 'http://chriswarrick.com/projects/index.html'),
+    ('projects/projects.json', 'http://chriswarrick.com/projects/projects.json'),
+    ('projects/aurqt/index.html', 'http://chriswarrick.com/projects/aurqt/index.html'),
+    ('projects/pkgbuilder/index.html', 'http://chriswarrick.com/projects/pkgbuilder/index.html'),
+    ('projects/python-project-template/index.html', 'http://chriswarrick.com/projects/python-project-template/index.html'),
+    ('projects/tEmplate/index.html', 'http://chriswarrick.com/projects/tEmplate/index.html'),
+    ('projects/img/pkgbuilder.png', 'http://chriswarrick.com/projects/_banners/pkgbuilder.png'),
+    ('projects/img/python-project-template.png', 'http://chriswarrick.com/projects/_banners/pypt.'),
+]
 
 # Commands to execute to deploy. Can be anything, for example,
 # you may use rsync:
