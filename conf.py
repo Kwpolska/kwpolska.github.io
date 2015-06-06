@@ -13,7 +13,7 @@ BLOG_AUTHOR = "Chris Warrick"
 BLOG_TITLE = "Chris Warrick’s GitHub Site"
 # This is the main URL for your site. It will be used
 # in a prominent link
-SITE_URL = "http://kwpolska.github.io/"
+SITE_URL = "https://kwpolska.github.io/"
 # This is the URL where nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "http://nikola.ralsina.com.ar"
