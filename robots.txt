@@ -1,2 +1,2 @@
-Sitemap: http://kwpolska.github.io/sitemapindex.xml
+Sitemap: https://kwpolska.github.io/sitemapindex.xml
 
