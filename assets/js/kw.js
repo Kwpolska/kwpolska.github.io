@@ -1,10 +1,17 @@
 // Kw’s JS
-// Copyright © 2013-2014, Ćhris “Kwpolska” Warrick.
+// Copyright © 2014, Chris Warrick.
 
-$('#kw-navbar-collapse').on('show.bs.collapse', function () {
-    $('#kw-navbar-collapse-icon').html('<i class="fa fa-chevron-up"></i>');
-});
+$(document).ready(function() {
+    if (document.cookie.indexOf('kw_cookies=1') == -1) {
+        if ($('html').attr('lang') == 'en') {
+            $("#cookiecontainer").html('<div class="alert alert-info fade in" role="alert" id="cookiealert">This site uses <strong>cookies</strong>.  <a href="/cookies/" class="alert-link">Read more.</a> <button type="button" class="close" data-dismiss="alert">&times; Got it</button></div>');
+        } else if ($('html').attr('lang') == 'pl') {
+            $("#cookiecontainer").html('<div class="alert alert-info fade in" role="alert" id="cookiealert">Ta strona używa <strong>ciasteczek</strong>.  <a href="/pl/cookies/" class="alert-link">Dowiedz się więcej.</a> <button type="button" class="close" data-dismiss="alert">&times; Rozumiem</button></div>');
+        }
+    }
 
-$('#kw-navbar-collapse').on('hide.bs.collapse', function () {
-    $('#kw-navbar-collapse-icon').html('<i class="fa fa-chevron-down"></i>');
+    $('#cookiealert').on('closed.bs.alert', function () {
+        // One second before the year 2038 bug.
+        document.cookie = 'kw_cookies=1; expires=17-Jan-2038 03:14:07 GMT; path=/';
+    });
 });
