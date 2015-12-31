@@ -1,2 +1,4 @@
 Sitemap: https://kwpolska.github.io/sitemapindex.xml
 
+User-Agent: *
+Host: kwpolska.github.io
