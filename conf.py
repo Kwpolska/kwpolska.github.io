@@ -303,7 +303,7 @@ INDEX_TEASERS = True
 # }}            A literal } (U+007D RIGHT CURLY BRACKET)
 # READ_MORE_LINK = '<p class="more"><a href="{link}">{read_more}…</a></p>'
 INDEX_READ_MORE_LINK = ''
-RSS_READ_MORE_LINK = ''
+FEED_READ_MORE_LINK = ''
 
 # A HTML fragment describing the license, for the sidebar.
 LICENSE = """<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">CC BY-NC-ND</a>"""
@@ -409,7 +409,7 @@ COPY_SOURCES = False
 # RSS_LINK is a HTML fragment to link the RSS or Atom feeds. If set to None,
 # the base.tmpl will use the feed Nikola generates. However, you may want to
 # change it for a feedburner feed or something else.
-RSS_LINK = " "
+FEED_LINK = " "
 
 # Show only teasers in the RSS feed? Default to True
 # RSS_TEASERS = True
@@ -605,5 +605,7 @@ INDEXES_PAGES = {'en': ', page %d',
                  'pl': ', page %d'}
 INDEXES_STATIC = False
 WRITE_TAG_CLOUD = False
+
+POSTS_SECTION_COLORS = {'en': {}}
 
 GLOBAL_CONTEXT = {'post_lead_format': post_lead_format,}
