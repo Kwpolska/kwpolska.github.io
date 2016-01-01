@@ -319,7 +319,7 @@ LICENSE = """<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd
 # Default is ''
 CONTENT_FOOTER = """<footer><p><a href="/cookies/">this site uses
 cookies.</a><br>by using this site, you agree to our cookie policy.</p><p>
-powered by <a href="https://getnikola.com">Nikola</a><br> copyright&nbsp;©&nbsp;2011–2015&nbsp;<a
+powered by <a href="https://getnikola.com">Nikola</a><br> copyright&nbsp;©&nbsp;2011–2016&nbsp;<a
 href="https://chriswarrick.com/contact/">Chris Warrick</a><br> <a rel="license"
 href="http://creativecommons.org/licenses/by-nc-nd/3.0/">CC
 BY-NC-ND</a>, unless stated otherwise</p></footer>"""
