@@ -319,7 +319,7 @@ LICENSE = """<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd
 # Default is ''
 CONTENT_FOOTER = """<footer><p><a href="/cookies/">this site uses
 cookies.</a><br>by using this site, you agree to our cookie policy.</p><p>
-powered by <a href="https://getnikola.com">Nikola</a><br> copyright&nbsp;©&nbsp;2011–2016&nbsp;<a
+powered by <a href="https://getnikola.com">Nikola</a><br> copyright&nbsp;©&nbsp;2011–2017&nbsp;<a
 href="https://chriswarrick.com/contact/">Chris Warrick</a><br> <a rel="license"
 href="http://creativecommons.org/licenses/by-nc-nd/3.0/">CC
 BY-NC-ND</a>, unless stated otherwise</p></footer>"""
@@ -331,9 +331,9 @@ BY-NC-ND</a>, unless stated otherwise</p></footer>"""
 COMMENT_SYSTEM_ID = None
 
 # Create index.html for story folders?
-STORY_INDEX = True
+PAGE_INDEX = True
 # Enable comments on story pages?
-COMMENTS_IN_STORIES = False
+COMMENTS_IN_PAGES = False
 # Enable comments on picture gallery pages?
 COMMENTS_IN_GALLERIES = False
 
@@ -483,7 +483,7 @@ FEED_LINK = " "
 # is served from the NetDNA CDN
 # Set this to False if you want to host your site without requiring access to
 # external resources.
-USE_CDN = True
+# USE_CDN = True
 
 # Extra things you want in the pages HEAD tag. This will be added right
 # before </HEAD>
@@ -557,7 +557,8 @@ USE_BUNDLES = True
 HYPHENATE = True
 
 # Plugins you don't want to use. Be careful :-)
-DISABLED_PLUGINS = ["render_indexes", "render_galleries", "generate_rss"]
+DISABLED_PLUGINS = ["classify_indexes", "classify_page_index", "classify_sections", "render_galleries"]
+GENERATE_RSS = False
 
 # Experimental plugins - use at your own risk.
 # They probably need some manual adjustments - please see their respective
