@@ -483,7 +483,8 @@ FEED_LINK = " "
 # is served from the NetDNA CDN
 # Set this to False if you want to host your site without requiring access to
 # external resources.
-# USE_CDN = True
+USE_CDN = True
+USE_CDN_WARNING = False
 
 # Extra things you want in the pages HEAD tag. This will be added right
 # before </HEAD>
