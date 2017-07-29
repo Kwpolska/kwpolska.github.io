@@ -18,6 +18,7 @@ h1 {
     padding-right: 4px;
     text-shadow: #555 0px 1px 0px;
     font-size: 25pt;
+    margin-top: 0;
 }
 
 h1 span {
