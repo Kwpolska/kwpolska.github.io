@@ -1,9 +1,8 @@
 body {
     max-width: 500px;
     margin: 0 auto;
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Roboto, Helvetica, sans-serif;
+    font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Roboto, Helvetica, sans-serif;
     color: #333;
-    font-size: 14px;
     line-height: 1.42857143;
 }
 
@@ -17,7 +16,7 @@ h1 {
     border-bottom: 1px solid #0000c1;
     padding-right: 4px;
     text-shadow: #555 0px 1px 0px;
-    font-size: 25pt;
+    font-size: 28pt;
     margin-top: 0;
 }
 
@@ -28,7 +27,7 @@ h1 span {
     color: #0ad;
 }
 
-img {
+#logo {
     float: left;
     height: 50px;
     width: 50px;
@@ -40,8 +39,8 @@ h1::after {
     display: block;
 }
 
-h2 {
-    font-size: 25px;
+h2.page-header {
+    font-size: 20pt;
     text-shadow: #555 0px 1px 0px;
     text-align: center;
     line-height: 1;
@@ -72,4 +71,10 @@ th, td {
     border: 1px solid #888;
     padding: 5px;
     border-collapse: collapse;
+}
+
+@media (prefers-color-scheme: dark) {
+    body { background: #1c1f21; color: #fff; }
+    th { background: #000; }
+    th, td { border: 1px solid #555; }
 }
