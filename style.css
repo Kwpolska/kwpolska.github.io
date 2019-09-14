@@ -16,7 +16,7 @@ h1 {
     border-bottom: 1px solid #0000c1;
     padding-right: 4px;
     text-shadow: #555 0px 1px 0px;
-    font-size: 28pt;
+    font-size: 2rem;
     margin-top: 0;
 }
 
@@ -39,8 +39,8 @@ h1::after {
     display: block;
 }
 
-h2.page-header {
-    font-size: 20pt;
+#page-title {
+    font-size: 1.6rem;
     text-shadow: #555 0px 1px 0px;
     text-align: center;
     line-height: 1;
@@ -53,7 +53,7 @@ footer {
 }
 
 .lead {
-    font-size: 21px;
+    font-size: 1.25rem;
 }
 
 table {
